@@ -8,9 +8,19 @@ app = Flask(__name__)
 def hello_world(name=None):
   return render_template('hello.html', name=name)
 
+
 @app.route('/')
 def index():
-  return 'Welcome'
+  return render_template('index.html')
+
+@app.route('/dashboard')
+def dashboard():
+  return render_template('dashboard.html')
+
+
+@app.errorhandler(404)
+def page_not_found(error):
+  return render_template('page_not_found.html'), 404
 
 if __name__ == '__main__':
   app.run()
