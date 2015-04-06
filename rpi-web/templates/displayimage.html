@@ -1,0 +1,8 @@
+{% extends "layout.html" %}
+
+{% block title %}Display Image{% endblock %}
+{% block body %}
+
+<img src="{{ url_for('view_image',filename='keanu.jpg') }}" height="300" width="300"></img>
+
+{% endblock %}

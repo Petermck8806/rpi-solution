@@ -1,6 +1,6 @@
 import sqlite3
 from flask import Flask, request, session, g, redirect, url_for, \
-     abort, render_template, flash
+     abort, render_template, flash, send_from_directory
 from contextlib import closing
 
 
@@ -54,6 +54,16 @@ def about():
 @app.route('/settings')
 def settings():
   return render_template('settings.html')
+
+
+@app.route('/view_image/<path:filename>')
+def view_image(filename):
+  return send_from_directory('/static/img',filename)
+
+
+@app.route('/display_image')
+def display_image():
+  return render_template('displayimage.html');
 
 
 if __name__ == '__main__':
