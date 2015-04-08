@@ -1,6 +1,6 @@
 # rpi-solution
 
-RPI-Solution is a raspberry pi project that submits images taken by the raspberry PI camera module to a webservice. The images are then displayed on the rpi-web application at http://petermckinney.me.
+RPI-Solution is a raspberry pi project that submits images taken by the raspberry PI camera module to a webservice. The images are then displayed on the rpi-web application.
 
 Prerequisuites: 
 
