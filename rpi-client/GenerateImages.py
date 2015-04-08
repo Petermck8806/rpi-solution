@@ -11,11 +11,13 @@ def get_image_list(rel_path):
   dir_files = os.listdir(abs_path)
   return dir_files
 
+
 def open_db(db_file):
   if not os.path.exists(db_file):
     return
   conn = sqlite3.connect(db_file)
   return conn
+
 
 def insert_image(conn, image):
   with open(image, 'rb') as input_file:
@@ -38,6 +40,7 @@ def extract_image(cursor, image_id):
     with open(filename, 'wb') as output_file:
         output_file.write(ablob)
     return filename
+
 
 image_list = get_image_list('.\images')
 print(image_list)
