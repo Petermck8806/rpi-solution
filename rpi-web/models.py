@@ -1,6 +1,8 @@
+__author__ = 'pmckinney'
+
 from datetime import datetime
 
-from webmain import db
+from views import db
 
 class Image(db.Model):
   id = db.Column(db.Integer, primary_key=True)

@@ -1,17 +1,10 @@
+__author__ = 'pmckinney'
+
 import sqlite3
 from flask import Flask, request, session, g, redirect, url_for, \
      abort, render_template, flash, send_from_directory
 from contextlib import closing
 
-
-#configuration
-DATABASE = 'RPIImages.db'
-DEBUG = True
-
-
-#create application
-app = Flask(__name__)
-app.config.from_object(__name__)
 
 #database methods
 def connect_db():
