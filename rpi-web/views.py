@@ -1,26 +1,7 @@
-__author__ = 'pmckinney'
-
-import sqlite3
 from flask import Flask, request, session, g, redirect, url_for, \
      abort, render_template, flash, send_from_directory
 from contextlib import closing
-
-
-#database methods
-def connect_db():
-  return sqlite3.connect(app.config['DATABASE'])
-
-
-@app.before_request
-def before_request():
-  g.db = connect_db()
-
-
-@app.teardown_request
-def teardown_request(exception):
-  db = getattr(g, 'db', None)
-  if db is not None:
-    db.close()
+from __init__ import app
 
 
 #error handler methods
@@ -30,6 +11,7 @@ def page_not_found(error):
 
 
 @app.route('/')
+@app.route('/index')
 def index():
   return render_template('index.html')
 
@@ -59,5 +41,3 @@ def display_image():
   return render_template('displayimage.html');
 
 
-if __name__ == '__main__':
-  app.run()

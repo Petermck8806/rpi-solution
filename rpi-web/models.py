@@ -2,11 +2,11 @@ __author__ = 'pmckinney'
 
 from datetime import datetime
 
-from views import db
+from __init__ import db
 
 class Image(db.Model):
   id = db.Column(db.Integer, primary_key=True)
-  image = db.Column(db.Blob, nullable=True)
+  image = db.Column(db.BLOB, nullable=True)
   type = db.Column(db.Text, nullable=False)
   filename = db.Column(db.Text, nullable=False)
 
