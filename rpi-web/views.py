@@ -9,7 +9,7 @@ from __init__ import app
 def page_not_found(error):
   return render_template('page_not_found.html'), 404
 
-
+#main page.
 @app.route('/')
 @app.route('/index')
 def index():
